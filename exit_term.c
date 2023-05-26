@@ -1,53 +1,74 @@
-#include "shell_head.h"
+#include "shell.h"
 
 /**
- *print - displays promt before user input
- *
- *Return:void
+ **_strncpy - copies a string
+ *@dest: the destination string to be copied to
+ *@src: the source string
+ *@n: the amount of characters to be copied
+ *Return: the concatenated string
  */
-void print(void)
+char *_strncpy(char *dest, char *src, int n)
 {
-	if (isatty(STDIN_FILENO))
+	int i, j;
+	char *s = dest;
+
+	i = 0;
+	while (src[i] != '\0' && i < n - 1)
 	{
-		_print("#teamShell$ ");
+		dest[i] = src[i];
+		i++;
 	}
-}
-/**
- *ctrl_c - suppresses quitting when Ctrl c is invoked
- *@num:SIGINT variable
- *Return:void
- */
-void ctrl_c(int num)
-{
-	(void)num;
-	signal(SIGINT, ctrl_c);
-	write(STDIN_FILENO, "\n#teamShell$ ", 11);
-}
-/**
- *sexit - exits a shell
- *@args:arguements passed
- *@line:string to free
- *Return:void
- */
-void sexit(char **args, char *line)
-{
-	int status = 0;
-
-	if (args[1] != NULL)
+	if (i < n)
 	{
-		status = atoi(args[1]);
-		if (status >= 0)
+		j = i;
+		while (j < n)
 		{
-			free(line);
-			free(args);
-			exit(status);
-		}
-		printf("Exit: illegal status: %s\n", args[1]);
+			dest[j] = '\0';
+			j++;
+}
 	}
-	else
+	return (s);
+}
+
+/**
+ **_strncat - concatenates two strings
+ *@dest: the first string
+ *@src: the second string
+ *@n: the amount of bytes to be maximally used
+ *Return: the concatenated string
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	int i, j;
+	char *s = dest;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0' && j < n)
 	{
-		free(line);
-		free(args);
-		exit(0);
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
+if (j < n)
+		dest[i] = '\0';
+	return (s);
+}
+
+/**
+ **_strchr - locates a character in a string
+ *@s: the string to be parsed
+ *@c: the character to look for
+ *Return: (s) a pointer to the memory area s
+ */
+char *_strchr(char *s, char c)
+{
+	do {
+		if (*s == c)
+			return (s);
+	} while (*s++ != '\0');
+
+	return (NULL);
 }

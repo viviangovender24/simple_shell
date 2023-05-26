@@ -36,10 +36,9 @@ int prev(void);
 int _cd(char **arg);
 
 /*exit_term.c*/
-void print(void);
-char *ignore(char *str);
-void ctrl_c(int num);
-void sexit(char **args, char *line);
+char *_strncpy(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src, int n);
+char *_strchr(char *s, char c);
 
 /*exe.c file*/
 unsigned int _occur(char *s);
