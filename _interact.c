@@ -2,11 +2,11 @@
 
 /**
  * interact - returns true if shell is interactive mode
- * @form: struct address
+ * @read: struct address
  *
  * Return: 1 if interactive mode, 0 otherwise
  */
-int interact(info_t *form)
+int interact(info_t *read)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
