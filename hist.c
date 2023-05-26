@@ -1,10 +1,12 @@
 #include "shell_head.h"
+
 /**
 * get_history_file - gets the history file
 * @info: parameter struct
 *
 * Return: allocated string containg history file
 */
+
 char *get_history_file(info_t *info)
 {
 char *buf, *dir;
@@ -26,6 +28,7 @@ return (buf);
 *
 * Return: 1 on success, else -1
 */
+
 int write_history(info_t *info)
 {
 ssize_t fd;
@@ -52,6 +55,7 @@ return (1);
 *
 * Return: histcount on success, 0 otherwise
 */
+
 int read_history(info_t *info)
 {
 int i, last = 0, linecount = 0;
