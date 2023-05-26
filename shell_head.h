@@ -83,5 +83,28 @@ size_t short_list(const list_ *h);
 int remove_node(list_t **head, unsigned int idx);
 void empty_list(list_ **head_ptr);
 
+/* files_2.c */
+size_t _lengthlist(const list_ *p);
+char **_stringslist(list_ *head);
+size_t _prtlist(const list_ *p);
+list_ *node_start(list_ *node, char *prefix, char f);
+ssize_t node_idx(list_ *head, list_t *node);
+
+/* main_file.c */
+int main_file(int arc, char **arv);
+
+/* recall.c */
+int _free(void **ptr);
+
+/* p_ars.c */
+int cm_d(info_t *read, char *path);
+char *same_chars(char *pathstr, int start, int stop);
+char *get_path(info_t *read, char *pathstr, char *cmd);
+
+/* _alloc.c */
+char *_memset(char *d, char b, unsigned int m);
+void free_str(char **qq);
+void *alloc(void *ptr, unsigned int prev_size, unsigned int new_size);
+
 /*
 #endif
