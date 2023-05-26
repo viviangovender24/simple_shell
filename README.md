@@ -16,7 +16,7 @@ reads commands from either a file or standard input and executes them
 that can be used both interactively and non-interactively.
 
 # Compilation
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+gcc ...
 
 # What was learned
 * How a shell works & finds commands
