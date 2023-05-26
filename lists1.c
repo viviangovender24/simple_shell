@@ -1,10 +1,12 @@
 #include "shell_head.h"
+
 /**
 * list_len - determines length of linked list
 * @h: pointer to first node
 *
 * Return: size of list
 */
+
 size_t list_len(const list_t *h)
 {
 size_t i = 0;
@@ -15,12 +17,14 @@ i++;
 }
 return (i);
 }
+
 /**
 * list_to_strings - returns an array of strings of the list->str
 * @head: pointer to first node
 *
 * Return: array of strings
 */
+
 char **list_to_strings(list_t *head)
 {
 list_t *node = head;
@@ -48,12 +52,14 @@ strs[i] = str;
 strs[i] = NULL;
 return (strs);
 }
+
 /**
 * print_list - prints all elements of a list_t linked list
 * @h: pointer to first node
 *
 * Return: size of list
 */
+
 size_t print_list(const list_t *h)
 {
 size_t i = 0;

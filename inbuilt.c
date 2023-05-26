@@ -1,4 +1,5 @@
 #include "shell_head.h"
+
 /**
 * _myexit - exits the shell
 * @info: the Structure containing arguments. Used to maintain function prototype
@@ -6,6 +7,7 @@
 * Return: with a given exit status return exit
 * (0) if info.argv[0] != "exit"
 */
+
 int _myexit(info_t *info)
 {
 int exitcheck;
@@ -26,11 +28,13 @@ return (-2);
 info->err_num = -1;
 return (-2);
 }
+
 /**
 * _mycd - this changes the current directory
 * @info: the struct containing potential arguments.for prototype
 * Return: Always 0
 */
+
 int _mycd(info_t *info)
 {
 char *s, *dir, buffer[1024];
@@ -73,12 +77,14 @@ _setenv(info, "PWD", getcwd(buffer, 1024));
 }
 return (0);
 }
+
 /**
 * _myhelp - changes the current directory of the process
 * @info: Structure containing potential arguments. Used to maintain
 * constant function prototype.
 * Return: Always 0
 */
+
 int _myhelp(info_t *info)
 {
 char **arg_array;
